@@ -1,0 +1,51 @@
+/* Estilo base e fontes */
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f8fa;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Paleta de cores customizada */
+.bg-brand-blue-dark { background-color: #0A4F8A; }
+.text-brand-blue-dark { color: #0A4F8A; }
+.bg-brand-green { background-color: #2ECC71; }
+.text-brand-green { color: #2ECC71; }
+.hover\:bg-brand-green-dark:hover { background-color: #27ae60; }
+.border-brand-blue-dark { border-color: #0A4F8A; }
+.border-brand-green { border-color: #2ECC71; }
+.ring-brand-blue-dark { --tw-ring-color: #0A4F8A }
+
+/* Efeitos de transição e animações */
+.transition-all-300 { transition: all 0.3s ease-in-out; }
+.card-hover-effect { transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; }
+.card-hover-effect:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07); }
+.img-hover-effect { transition: transform 0.4s ease; }
+.group:hover .img-hover-effect { transform: scale(1.05); }
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+/* Estilo para o modal de artigo */
+#article-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+#article-modal-content {
+    transition: transform 0.3s ease-in-out;
+}
+#globe-container {
+    cursor: grab;
+    min-height: 400px;
+    height: 500px;
+}
+#globe-container:grabbing {
+    cursor: grabbing;
+}

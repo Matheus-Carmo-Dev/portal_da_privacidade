@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal da Proteção e Privacidade de Dados Pessoais</title>
+    <title>Portal da Privacidade</title>
+
+    <link rel="icon" href="./image/Gemini_Generated_Image_gvpqy5gvpqy5gvpq.png" type="image/png">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter (corpo) e Lexend (títulos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Icons: Lucide.dev -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -34,9 +33,9 @@
         .text-brand-blue-dark { color: #0A4F8A; }
         .bg-brand-green { background-color: #2ECC71; }
         .text-brand-green { color: #2ECC71; }
-        .hover\:bg-brand-green-dark:hover { background-color: #27ae60; }
+        .hover\:bg-brand-blue-dark-hover:hover { background-color: #083D6C; }
         .border-brand-blue-dark { border-color: #0A4F8A; }
-        .border-brand-green { border-color: #2ECC71; }
+        .ring-brand-blue-dark:focus { --tw-ring-color: #0A4F8A }
         
         /* Efeitos de transição e animações */
         .transition-all-300 { transition: all 0.3s ease-in-out; }
@@ -53,40 +52,43 @@
         .fade-in { animation: fadeIn 0.5s ease-out forwards; }
         
         /* Estilo para o modal de artigo */
-        #article-modal {
-            transition: opacity 0.3s ease-in-out;
-        }
-        #article-modal-content {
-            transition: transform 0.3s ease-in-out;
+        #article-modal { transition: opacity 0.3s ease-in-out; }
+        #article-modal-content { transition: transform 0.3s ease-in-out; }
+        
+        /* Estilos para o Accordion do Glossário */
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
         }
     </style>
 </head>
 <body class="text-gray-700">
 
-    <!-- CABEÇALHO -->
     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-brand-blue-dark p-2 rounded-lg shadow">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-3">
+                           <div class="bg-brand-blue-dark p-2 rounded-lg shadow">
                         <svg class="lucide lucide-shield-check text-white" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
                     
                     </div>
-                    <a href="#home" class="nav-link text-xl sm:text-2xl font-bold text-brand-blue-dark" data-page="home">Portal da Proteção e Privacidade de Dados</a>
+                    <a href="#home" class="nav-link text-xl sm:text-2xl font-bold text-brand-blue-dark" data-page="home">Portal da Privacidade</a>
                 </div>
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="home">Home</a>
-                    <a href="#noticias" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="noticias">Notícias</a>
-                    <a href="#pelo-mundo" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="pelo-mundo">Pelo Mundo</a>
-                    <a href="#artigos" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="artigos">Artigos</a>
-                    <a href="#descomplica" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="descomplica">Descomplica LGPD</a>
-                    <a href="#sobre" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="sobre">Sobre Nós</a>
-                    <a href="#contato" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="contato">Contato</a>
-                </nav>
-                <div class="flex items-center space-x-4">
+                    <nav class="hidden lg:flex items-center space-x-6 text-sm ml-12">
+                        <a href="#home" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="home">Home</a>
+                        <a href="#noticias" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="noticias">Notícias</a>
+                        <a href="#pelo-mundo" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="pelo-mundo">Pelo Mundo</a>
+                        <a href="#artigos" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="artigos">Artigos</a>
+                        <a href="#documentos" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="documentos">Documentos</a>
+                        <a href="#descomplica" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="descomplica">Descomplica LGPD</a>
+                        <a href="#glossario" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="glossario">Glossário</a>
+                        <a href="#sobre" class="nav-link text-gray-600 hover:text-brand-blue-dark font-medium transition-all-300" data-page="sobre">Sobre Nós</a>
+                    </nav>
                      <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 hover:text-brand-blue-dark focus:outline-none">
-                         <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
+                          <i data-lucide="menu" class="w-6 h-6"></i>
+                     </button>
                 </div>
             </div>
         </div>
@@ -95,95 +97,31 @@
             <a href="#noticias" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="noticias">Notícias</a>
             <a href="#pelo-mundo" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="pelo-mundo">Pelo Mundo</a>
             <a href="#artigos" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="artigos">Artigos</a>
+            <a href="#documentos" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="documentos">Documentos</a>
             <a href="#descomplica" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="descomplica">Descomplica LGPD</a>
+            <a href="#glossario" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="glossario">Glossário</a>
             <a href="#sobre" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="sobre">Sobre Nós</a>
             <a href="#contato" class="nav-link block text-gray-600 hover:text-brand-blue-dark font-medium py-2" data-page="contato">Contato</a>
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main id="main-content" class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-        <!-- PÁGINA HOME -->
         <div id="page-home" class="page-content fade-in">
              <section id="manchetes" class="mb-16">
-                <h1 class="text-4xl font-bold text-gray-900 mb-8">Em Destaque</h1>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Notícia Principal -->
-
-
-
-                    <div class="col-span-1 lg:col-span-1 group cursor-pointer card-hover-effect bg-white rounded-xl overflow-hidden open-article" data-id="anpd-havan-videos" data-title="NOTA DE ESCLARECIMENTO: Sobre a fiscalização da prática da empresa Havan de divulgar vídeos de pessoas que cometeram furtos em suas lojas." data-category="Decisões da ANPD" data-img="https://www.gov.br/anpd/pt-br/assuntos/noticias/sobre-a-fiscalizacao-da-pratica-da-empresa-havan-de-divulgar-videos-de-pessoas-que-cometeram-furtos-em-suas-lojas/nota_oficial_imagem.jpg/@@images/d1a78bc8-fe6b-4121-a909-57fb1494ee0a.jpeg" data-author="Matheus do Carmo" data-date="29 de Julho de 2025">
-                        <div class="relative">
-                            <div class="overflow-hidden"><img src="https://www.gov.br/anpd/pt-br/assuntos/noticias/sobre-a-fiscalizacao-da-pratica-da-empresa-havan-de-divulgar-videos-de-pessoas-que-cometeram-furtos-em-suas-lojas/nota_oficial_imagem.jpg/@@images/d1a78bc8-fe6b-4121-a909-57fb1494ee0a.jpeg" alt="Imagem da notícia principal sobre a ANPD" class="w-full h-auto object-cover img-hover-effect"></div>
-                            <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8">
-                                <span class="bg-brand-blue-dark text-white text-xs font-bold px-3 py-1 rounded-full">Decisões da ANPD</span>
-                                <h2 class="text-white text-2xl md:text-3xl font-bold mt-3 leading-tight group-hover:underline">ANPD publica novas diretrizes sobre o tratamento de dados de crianças e adolescentes</h2>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                    <!-- Notícias Secundárias -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="vazamento-varejo" data-title="Vazamento em gigante do varejo expõe dados de 2 milhões de clientes" data-category="Casos de Vazamento" data-img="https://placehold.co/400x250/334155/FFFFFF?text=Vazamento" data-author="Equipe do Portal" data-date="28 de Julho de 2025">
-                            <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/334155/FFFFFF?text=Vazamento" alt="Imagem sobre vazamento de dados" class="w-full h-40 object-cover img-hover-effect"></div>
-                            <span class="text-brand-blue-dark text-sm font-semibold">Casos de Vazamento</span>
-                            <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">Vazamento em gigante do varejo expõe dados de 2 milhões de clientes.</h3>
-                        </div>
-                        <div class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="ia-privacidade" data-title="O impacto da Inteligência Artificial na privacidade: riscos e oportunidades" data-category="Privacidade e Tecnologia" data-img="https://placehold.co/400x250/166534/FFFFFF?text=IA+e+Privacidade" data-author="Carlos Mendes" data-date="27 de Julho de 2025">
-                            <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/166534/FFFFFF?text=IA+e+Privacidade" alt="Imagem sobre Inteligência Artificial" class="w-full h-40 object-cover img-hover-effect"></div>
-                            <span class="text-brand-blue-dark text-sm font-semibold">Privacidade e Tecnologia</span>
-                            <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">O impacto da Inteligência Artificial na privacidade: riscos e oportunidades.</h3>
-                        </div>
-                        <div class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="gdpr-7-anos" data-title="GDPR completa 7 anos: lições aprendidas e o que o Brasil pode aplicar" data-category="Legislação Internacional" data-img="https://placehold.co/400x250/94a3b8/FFFFFF?text=GDPR" data-author="Redação" data-date="26 de Julho de 2025">
-                            <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/94a3b8/FFFFFF?text=GDPR" alt="Imagem da bandeira da União Europeia" class="w-full h-40 object-cover img-hover-effect"></div>
-                            <span class="text-brand-blue-dark text-sm font-semibold">Legislação Internacional</span>
-                            <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">GDPR completa 7 anos: lições aprendidas e o que o Brasil pode aplicar.</h3>
-                        </div>
-                         <div class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="phishing-ataques" data-title="Ataques de phishing estão mais sofisticados: 5 dicas para não cair em golpes" data-category="Segurança Cibernética" data-img="https://placehold.co/400x250/be123c/FFFFFF?text=Cibersegurança" data-author="Equipe do Portal" data-date="25 de Julho de 2025">
-                            <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/be123c/FFFFFF?text=Cibersegurança" alt="Imagem sobre cibersegurança" class="w-full h-40 object-cover img-hover-effect"></div>
-                            <span class="text-brand-blue-dark text-sm font-semibold">Segurança Cibernética</span>
-                            <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">Ataques de phishing estão mais sofisticados: 5 dicas para não cair em golpes.</h3>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                 <h1 class="text-4xl font-bold text-gray-900 mb-8">Em Destaque</h1>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                     <div id="noticia-principal-container"></div>
+                     <div id="noticias-secundarias-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+                 </div>
+             </section>
         </div>
 
-        <!-- PÁGINA NOTÍCIAS -->
         <div id="page-noticias" class="page-content hidden fade-in">
              <h1 class="text-4xl font-bold text-gray-900 mb-4">Notícias</h1>
              <p class="text-lg text-gray-600 mb-8">Fique por dentro das últimas atualizações do mundo da privacidade e proteção de dados.</p>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                 <article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="anpd-havan-videos" data-title="NOTA DE ESCLARECIMENTO: Sobre a fiscalização da prática da empresa Havan de divulgar vídeos de pessoas que cometeram furtos em suas lojas" data-category="Decisões da ANPD" data-img="https://www.gov.br/anpd/pt-br/assuntos/noticias/sobre-a-fiscalizacao-da-pratica-da-empresa-havan-de-divulgar-videos-de-pessoas-que-cometeram-furtos-em-suas-lojas/nota_oficial_imagem.jpg/@@images/d1a78bc8-fe6b-4121-a909-57fb1494ee0a.jpeg" data-author="Matheus do Carmo" data-date="29 de Julho de 2025">
-                     <div class="overflow-hidden rounded-lg mb-4"><img src="https://www.gov.br/anpd/pt-br/assuntos/noticias/sobre-a-fiscalizacao-da-pratica-da-empresa-havan-de-divulgar-videos-de-pessoas-que-cometeram-furtos-em-suas-lojas/nota_oficial_imagem.jpg/@@images/d1a78bc8-fe6b-4121-a909-57fb1494ee0a.jpeg" alt="Imagem" class="w-full h-48 object-cover img-hover-effect"></div>
-                     <span class="text-brand-blue-dark text-sm font-semibold">Decisões da ANPD</span>
-                     <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">NOTA DE ESCLARECIMENTO: Sobre a fiscalização da prática da empresa Havan de divulgar vídeos de pessoas que cometeram furtos em suas lojas.</h3>
-                     <p class="text-xs text-gray-500 mt-2">25 de Julho de 2025</p>
-                 </article>
-
-                 <article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="vazamento-varejo" data-title="Vazamento em gigante do varejo expõe dados de 2 milhões de clientes" data-category="Casos de Vazamento" data-img="https://placehold.co/400x250/334155/FFFFFF?text=Vazamento" data-author="Equipe do Portal" data-date="28 de Julho de 2025">
-                     <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/334155/FFFFFF?text=Vazamento" alt="Imagem" class="w-full h-48 object-cover img-hover-effect"></div>
-                     <span class="text-brand-blue-dark text-sm font-semibold">Casos de Vazamento</span>
-                     <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">Vazamento em gigante do varejo expõe dados de 2 milhões de clientes.</h3>
-                     <p class="text-xs text-gray-500 mt-2">28 de Julho de 2025</p>
-                 </article>
-                 <article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="ia-privacidade" data-title="O impacto da Inteligência Artificial na privacidade: riscos e oportunidades" data-category="Privacidade e Tecnologia" data-img="https://placehold.co/400x250/166534/FFFFFF?text=IA" data-author="Carlos Mendes" data-date="27 de Julho de 2025">
-                     <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/166534/FFFFFF?text=IA" alt="Imagem" class="w-full h-48 object-cover img-hover-effect"></div>
-                     <span class="text-brand-blue-dark text-sm font-semibold">Privacidade e Tecnologia</span>
-                     <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">O impacto da Inteligência Artificial na privacidade: riscos e oportunidades.</h3>
-                     <p class="text-xs text-gray-500 mt-2">27 de Julho de 2025</p>
-                 </article>
-             </div>
+             <div id="todas-noticias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
 
-        <!-- PÁGINA PELO MUNDO -->
         <div id="page-pelo-mundo" class="page-content hidden fade-in">
             <div class="text-center">
                 <h1 class="text-4xl font-bold text-gray-900 mb-4">Proteção de Dados Pelo Mundo</h1>
@@ -191,7 +129,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <!-- Card Brasil -->
                 <div class="card-hover-effect bg-white p-8 rounded-xl flex flex-col">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil" class="w-12 h-auto rounded-md shadow-sm">
@@ -204,7 +141,6 @@
                         <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm">Criação da ANPD</span></li>
                     </ul>
                 </div>
-                <!-- Card Europa -->
                 <div class="card-hover-effect bg-white p-8 rounded-xl flex flex-col">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://flagcdn.com/eu.svg" alt="Bandeira da União Europeia" class="w-12 h-auto rounded-md shadow-sm">
@@ -217,7 +153,6 @@
                         <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm">Notificação de violação em 72h</span></li>
                     </ul>
                 </div>
-                <!-- Card Califórnia (EUA) -->
                 <div class="card-hover-effect bg-white p-8 rounded-xl flex flex-col">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://flagcdn.com/us-ca.svg" alt="Bandeira da Califórnia" class="w-12 h-auto rounded-md shadow-sm">
@@ -230,7 +165,6 @@
                         <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm">Direito de optar por não vender dados</span></li>
                     </ul>
                 </div>
-                <!-- Card China -->
                 <div class="card-hover-effect bg-white p-8 rounded-xl flex flex-col">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://flagcdn.com/cn.svg" alt="Bandeira da China" class="w-12 h-auto rounded-md shadow-sm">
@@ -246,26 +180,64 @@
             </div>
         </div>
 
-        <!-- PÁGINA ARTIGOS -->
         <div id="page-artigos" class="page-content hidden fade-in">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Artigos de Opinião</h1>
             <p class="text-lg text-gray-600 mb-8">Análises aprofundadas de especialistas sobre os temas mais relevantes da privacidade.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="futuro-pos-cookies" data-title="O Futuro da Privacidade na Era Pós-Cookies" data-category="Artigo de Opinião" data-img="https://placehold.co/400x250/0e7490/FFFFFF?text=Cookies" data-author="Dr. Ricardo Alves" data-date="22 de Julho de 2025">
-                    <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/0e7490/FFFFFF?text=Cookies" class="w-full h-48 object-cover img-hover-effect"></div>
-                    <span class="text-brand-blue-dark text-sm font-semibold">Artigo de Opinião</span>
-                    <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">O Futuro da Privacidade na Era Pós-Cookies</h3>
-                    <p class="text-xs text-gray-500 mt-2">Por Dr. Ricardo Alves</p>
-                </article>
-                <article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="lgpd-saude" data-title="LGPD e o Setor da Saúde: Desafios e Cuidados" data-category="Artigo de Opinião" data-img="https://placehold.co/400x250/be123c/FFFFFF?text=Saúde" data-author="Maria Clara" data-date="21 de Julho de 2025">
-                    <div class="overflow-hidden rounded-lg mb-4"><img src="https://placehold.co/400x250/be123c/FFFFFF?text=Saúde" class="w-full h-48 object-cover img-hover-effect"></div>
-                    <span class="text-brand-blue-dark text-sm font-semibold">Artigo de Opinião</span>
-                    <h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">LGPD e o Setor da Saúde: Desafios e Cuidados</h3>
-                    <p class="text-xs text-gray-500 mt-2">Por Maria Clara</p>
-                </article>
+            <div id="todos-artigos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </div>
+
+        <div id="page-documentos" class="page-content hidden fade-in">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Documentos Oficiais</h1>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Acesse guias, relatórios e regulamentos das principais autoridades de proteção de dados do mundo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="card-hover-effect bg-white p-6 rounded-xl flex flex-col">
+                    <div class="flex items-center gap-4">
+                        <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil" class="w-10 h-auto rounded-md shadow-sm flex-shrink-0">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Guia de Cookies e Proteção de Dados</h3>
+                            <p class="text-sm font-medium text-brand-blue-dark">ANPD - Brasil</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-4 text-sm flex-grow">Guia orientativo da Autoridade Nacional de Proteção de Dados sobre o uso de cookies e os requisitos da LGPD.</p>
+                    <a href="https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/2022.10.28-guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf" target="_blank" rel="noopener noreferrer" class="mt-6 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue-dark hover:bg-brand-blue-dark-hover focus:outline-none focus:ring-2 focus:ring-offset-2 ring-brand-blue-dark">
+                        <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                        Baixar PDF
+                    </a>
+                </div>
+                <div class="card-hover-effect bg-white p-6 rounded-xl flex flex-col">
+                    <div class="flex items-center gap-4">
+                        <img src="https://flagcdn.com/gb.svg" alt="Bandeira do Reino Unido" class="w-10 h-auto rounded-md shadow-sm flex-shrink-0">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Guia de Inteligência Artificial e Proteção de Dados</h3>
+                            <p class="text-sm font-medium text-brand-blue-dark">ICO - Reino Unido</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-4 text-sm flex-grow">Orientações do Information Commissioner's Office para organizações que desenvolvem ou usam IA de forma justa, legal e transparente.</p>
+                    <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/" target="_blank" rel="noopener noreferrer" class="mt-6 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue-dark hover:bg-brand-blue-dark-hover focus:outline-none focus:ring-2 focus:ring-offset-2 ring-brand-blue-dark">
+                         <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                        Baixar PDF
+                    </a>
+                </div>
+                <div class="card-hover-effect bg-white p-6 rounded-xl flex flex-col">
+                    <div class="flex items-center gap-4">
+                        <img src="https://flagcdn.com/fr.svg" alt="Bandeira da França" class="w-10 h-auto rounded-md shadow-sm flex-shrink-0">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Segurança de Dados Pessoais</h3>
+                            <p class="text-sm font-medium text-brand-blue-dark">CNIL - França</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-4 text-sm flex-grow">Guia da Commission Nationale de l'Informatique et des Libertés com as precauções essenciais para garantir a segurança dos dados.</p>
+                    <a href="https://www.cnil.fr/en/personal-data-security-guide-taking-essential-precautions" target="_blank" rel="noopener noreferrer" class="mt-6 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue-dark hover:bg-brand-blue-dark-hover focus:outline-none focus:ring-2 focus:ring-offset-2 ring-brand-blue-dark">
+                         <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                        Baixar PDF
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- PÁGINA DESCOMPLICA LGPD -->
+        
         <div id="page-descomplica" class="page-content hidden fade-in">
             <div class="text-center">
                 <h1 class="text-4xl font-bold text-gray-900 mb-4">Descomplica LGPD</h1>
@@ -273,96 +245,102 @@
             </div>
             <div class="mt-12">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Guias Práticos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card-hover-effect bg-white p-6 rounded-xl text-center cursor-pointer open-article" data-id="guia-startups" data-title="Guia para Startups" data-category="Descomplica LGPD" data-img="https://placehold.co/600x400/fbbf24/FFFFFF?text=Startups" data-author="Equipe do Portal" data-date="20 de Julho de 2025">
-                        <i data-lucide="file-text" class="w-12 h-12 mx-auto text-brand-blue-dark"></i>
-                        <h3 class="font-bold text-lg mt-4">Guia para Startups</h3>
-                        <p class="text-sm mt-2 text-gray-600">Os primeiros passos para adequar a sua startup à LGPD.</p>
-                    </div>
-                    <div class="card-hover-effect bg-white p-6 rounded-xl text-center cursor-pointer open-article" data-id="politica-cookies" data-title="Política de Cookies" data-category="Descomplica LGPD" data-img="https://placehold.co/600x400/38bdf8/FFFFFF?text=Cookies" data-author="Equipe do Portal" data-date="19 de Julho de 2025">
-                        <i data-lucide="cookie" class="w-12 h-12 mx-auto text-brand-blue-dark"></i>
-                        <h3 class="font-bold text-lg mt-4">Política de Cookies</h3>
-                        <p class="text-sm mt-2 text-gray-600">Como criar e gerir uma política de cookies eficiente.</p>
-                    </div>
-                    <div class="card-hover-effect bg-white p-6 rounded-xl text-center cursor-pointer open-article" data-id="direitos-titular" data-title="Direitos do Titular" data-category="Descomplica LGPD" data-img="https://placehold.co/600x400/a78bfa/FFFFFF?text=Direitos" data-author="Equipe do Portal" data-date="18 de Julho de 2025">
-                        <i data-lucide="shield-question" class="w-12 h-12 mx-auto text-brand-blue-dark"></i>
-                        <h3 class="font-bold text-lg mt-4">Direitos do Titular</h3>
-                        <p class="text-sm mt-2 text-gray-600">Entenda quais são e como atender às solicitações dos seus clientes.</p>
-                    </div>
-                </div>
+                <div id="guias-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     </div>
             </div>
         </div>
-        <!-- PÁGINA SOBRE NÓS -->
-        <div id="page-sobre" class="page-content hidden fade-in">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl font-bold text-gray-900 text-center mb-6">A Nossa Missão é a Sua Privacidade</h1>
-                <p class="text-lg text-gray-600 text-center mb-12">O Portal da Privacidade nasceu da convicção de que o conhecimento é a ferramenta mais poderosa para a proteção de dados. A nossa missão é traduzir o complexo universo jurídico e técnico da privacidade em informações claras, acessíveis e práticas para todos: cidadãos, profissionais e empresas.</p>
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">A Nossa Equipe</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex items-center gap-4">
-                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHKBGXRg28cZQ/profile-displayphoto-scale_200_200/B4DZgAUQa5HMAY-/0/1752351968525?e=1756944000&v=beta&t=r80zAMOv2UXIhVe8kGMIA_EJEQANpdlx11bCIxBcsNc" alt="Foto de Matheus do Carmo" class="w-24 h-24 rounded-full object-cover">
-                            <div>
-                                <h3 class="font-bold text-lg">Matheus do Carmo</h3>
-                                <p class="text-sm text-brand-blue-dark font-medium">Analista de Proteção de Dados Pessoais</p>
-                                <p class="text-sm mt-1 text-gray-600">Especialista em proteção de dados pessoais: LGPD & GDPR.</p>
-                            </div>
-                        </div>
-                        <!--
-                        <div class="flex items-center gap-4">
-                            <img src="https://placehold.co/100x100/166534/FFFFFF?text=CM" alt="Foto de Carlos Mendes" class="w-24 h-24 rounded-full object-cover">
-                            <div>
-                                <h3 class="font-bold text-lg">Carlos Mendes</h3>
-                                <p class="text-sm text-brand-blue-dark font-medium">Consultor Jurídico</p>
-                                <p class="text-sm mt-1 text-gray-600">Advogado com mais de 10 anos de experiência em Direito Digital e implementação de programas de privacidade.</p>
-                            </div>
-                        -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- PÁGINA CONTATO -->
-        <div id="page-contato" class="page-content hidden fade-in">
-            <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Entre em Contacto</h1>
-                <p class="text-lg text-gray-600">Tem uma sugestão de pauta, uma dúvida ou quer ser nosso parceiro? Gostaríamos muito de o ouvir.</p>
-            </div>
-            <div class="mt-12 max-w-xl mx-auto bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                <form action="#" method="POST">
-                    <div class="grid grid-cols-1 gap-y-6">
-                        <div>
-                            <label for="full-name" class="sr-only">Nome completo</label>
-                            <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-blue-dark focus:border-brand-blue-dark border-gray-300 rounded-md" placeholder="Nome completo">
-                        </div>
-                        <div>
-                            <label for="email" class="sr-only">Email</label>
-                            <input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-blue-dark focus:border-brand-blue-dark border-gray-300 rounded-md" placeholder="Email">
-                        </div>
-                        <div>
-                            <label for="message" class="sr-only">Mensagem</label>
-                            <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-blue-dark focus:border-brand-blue-dark border border-gray-300 rounded-md" placeholder="A sua mensagem"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-blue-dark hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue-dark">
-                                Enviar Mensagem
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
 
-    <!-- MODAL PARA EXIBIR ARTIGO -->
+        <div id="page-glossario" class="page-content hidden fade-in">
+             <div class="text-center">
+                 <h1 class="text-4xl font-bold text-gray-900 mb-4">Glossário da LGPD</h1>
+                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">Entenda os termos e conceitos essenciais da Lei Geral de Proteção de Dados.</p>
+             </div>
+             <div class="max-w-3xl mx-auto mt-12 space-y-3">
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Dado Pessoal</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Informação relacionada a pessoa natural identificada ou identificável. Exemplos: nome, CPF, e-mail, endereço IP, etc.</p>
+                     </div>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Dado Pessoal Sensível</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural.</p>
+                     </div>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Tratamento de Dados</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração.</p>
+                     </div>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Titular</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Pessoa natural a quem se referem os dados pessoais que são objeto de tratamento.</p>
+                     </div>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Controlador</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais.</p>
+                     </div>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                     <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none ring-brand-blue-dark focus:ring-2">
+                         <span>Operador</span>
+                         <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="accordion-panel bg-gray-50 text-gray-600">
+                         <p class="p-5 border-t border-gray-200">Pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.</p>
+                     </div>
+                 </div>
+             </div>
+        </div>
+
+        <div id="page-sobre" class="page-content hidden fade-in">
+             <div class="max-w-4xl mx-auto">
+                 <h1 class="text-4xl font-bold text-gray-900 text-center mb-6">A Nossa Missão é a Sua Privacidade</h1>
+                 <p class="text-lg text-gray-600 text-center mb-12">O Portal da Privacidade nasceu da convicção de que o conhecimento é a ferramenta mais poderosa para a proteção de dados. A nossa missão é traduzir o complexo universo jurídico e técnico da privacidade em informações claras, acessíveis e práticas para todos: cidadãos, profissionais e empresas.</p>
+                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                     <h2 class="text-2xl font-bold text-gray-900 mb-6">A Nossa Equipe</h2>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div class="flex items-center gap-4">
+                             <img src="https://media.licdn.com/dms/image/v2/D4D03AQHKBGXRg28cZQ/profile-displayphoto-scale_200_200/B4DZgAUQa5HMAY-/0/1752351968525?e=1756944000&v=beta&t=r80zAMOv2UXIhVe8kGMIA_EJEQANpdlx11bCIxBcsNc" alt="Foto de Matheus do Carmo" class="w-24 h-24 rounded-full object-cover">
+                             <div>
+                                 <h3 class="font-bold text-lg">Matheus do Carmo</h3>
+                                 <p class="text-sm text-brand-blue-dark font-medium">Analista de Proteção de Dados Pessoais</p>
+                                 <p class="text-sm mt-1 text-gray-600">Especialista em proteção de dados pessoais: LGPD & GDPR.</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+        
+        </main>
+
     <div id="article-modal" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 hidden opacity-0">
         <div id="article-modal-content" class="bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto transform scale-95">
-            <!-- Conteúdo do Artigo será injetado aqui -->
-        </div>
+            </div>
     </div>
 
-    <!-- RODAPÉ -->
-    <footer class="bg-gray-800 text-white mt-16">
+   <footer class="bg-gray-800 text-white mt-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-1">
@@ -407,133 +385,293 @@
     </footer>
 
     <script>
-        window.addEventListener('load', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const mobileMenu = document.getElementById('mobile-menu');
             const articleModal = document.getElementById('article-modal');
             const articleModalContent = document.getElementById('article-modal-content');
 
-            // --- BASE DE DADOS DE CONTEÚDO DOS ARTIGOS ---
-            const articleContents = {
-                "anpd-havan-videos": `
-                    <p>Em maio de 2025, a ANPD recebeu notificação do Ministério Público do Estado de Santa Catarina, solicitando análise da compatibilidade com a Lei Geral de Proteção de Dados Pessoais (LGPD) da prática da empresa Havan de divulgar vídeos com imagens de pessoas que teriam cometido furto em suas lojas.</p>
-                    <p>Após a análise preliminar do caso, no final de junho de 2025, a Coordenação-Geral de Fiscalização emitiu medida preventiva, para determinar que a empresa suspendesse temporariamente a referida divulgação de vídeos em suas redes sociais, enquanto transcorre a apuração pela ANPD.</p>
-                    <p>Essa determinação foi baseada em pontos específicos da LGPD, principalmente nos artigos 6º (que trata dos princípios da lei), 7º e 11 (sobre regras de tratamento de dados pessoais e dados sensíveis), 14 (sobre o tratamento de dados de crianças e adolescentes), e 55-J (que define as competências da ANPD).</p>
-                    <p>Entre os riscos identificados pela ANPD, incluem-se os que decorrem de eventual exposição de imagens de crianças e adolescentes sem as devidas cautelas exigidas pela legislação vigente.</p>
-                    <p>A medida preventiva constitui apuração de caráter preliminar, de natureza cautelar, sem a aplicação de sanções administrativas, como multas à empresa.</p>
-                    <p>A decisão da ANPD não impede a continuidade da realização de monitoramento por câmeras nas lojas da empresa, nem impede o encaminhamento às autoridades competentes de vídeos e imagens que constituam prova da ocorrência de crimes.</p>
-                    <p>O processo de fiscalização segue seu curso ordinário, com a apresentação de esclarecimentos pela empresa e conclusão da análise técnica, sem representar, portanto, qualquer juízo definitivo sobre as condutas analisadas.</p>
-                    <p>Em recurso apresentado à ANPD, a Havan expressou o seu compromisso com a cultura da proteção de dados pessoais, explicitou as razões que a levaram a adotar a prática questionada pelo Ministério Público e informou que, até que sejam dirimidas as dúvidas sobre a sua compatibilidade com a LGPD, suspendeu a divulgação dos vídeos em suas redes sociais.</p>
-                    <p>Seguindo os procedimentos aplicáveis, o recurso da Havan será analisado pela Coordenação-Geral de Fiscalização e, posteriormente, encaminhado para deliberação pelo Conselho Diretor da ANPD.</p>
-                `,
+            // =================================================================
+            // BANCO DE DADOS DE CONTEÚDO
+            // =================================================================
+            const contentDatabase = [
+                 {
+                    id: "anpd-havan-videos",
+                    type: "noticia",
+                    title: "ANPD publica novas diretrizes sobre o tratamento de dados de crianças e adolescentes",
+                    fullTitle: "NOTA DE ESCLARECIMENTO: Sobre a fiscalização da prática da empresa Havan de divulgar vídeos de pessoas que cometeram furtos em suas lojas.",
+                    category: "Decisões da ANPD",
+                    image: "https://www.gov.br/anpd/pt-br/assuntos/noticias/sobre-a-fiscalizacao-da-pratica-da-empresa-havan-de-divulgar-videos-de-pessoas-que-cometeram-furtos-em-suas-lojas/nota_oficial_imagem.jpg/@@images/d1a78bc8-fe6b-4121-a909-57fb1494ee0a.jpeg",
+                    author: "Matheus do Carmo",
+                    date: "2025-07-29",
+                    content: `<p>Em maio de 2025, a ANPD recebeu notificação do Ministério Público do Estado de Santa Catarina, solicitando análise da compatibilidade com a Lei Geral de Proteção de Dados Pessoais (LGPD) da prática da empresa Havan de divulgar vídeos com imagens de pessoas que teriam cometido furto em suas lojas.</p><p>Após a análise preliminar do caso, no final de junho de 2025, a Coordenação-Geral de Fiscalização emitiu medida preventiva, para determinar que a empresa suspendesse temporariamente a referida divulgação de vídeos em suas redes sociais, enquanto transcorre a apuração pela ANPD.</p><p>O processo de fiscalização segue seu curso ordinário, com a apresentação de esclarecimentos pela empresa e conclusão da análise técnica, sem representar, portanto, qualquer juízo definitivo sobre as condutas analisadas.</p>`
+                },
+                {
+                    id: "vazamento-varejo",
+                    type: "noticia",
+                    title: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes.",
+                    fullTitle: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes",
+                    category: "Casos de Vazamento",
+                    image: "https://placehold.co/400x250/334155/FFFFFF?text=Vazamento",
+                    author: "Equipe do Portal",
+                    date: "2025-07-28",
+                    content: `<p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p><p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>`
+                },
+
+                {
+                    id: "consentimento-premio-danilo-doneda",
+                    type: "noticia",
+                    title: "Consentimento como base legal é tema do trabalho vencedor",
+                    fullTitle: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes",
+                    category: "Premiações",
+                    image: "https://www.gov.br/anpd/pt-br/assuntos/noticias/consentimento-como-base-legal-e-tema-do-trabalho-vencedor/carrossel-resultado-preliminar-concurso-3-premio-danilo-doneda-2025.jpg/@@images/64969c42-0320-4e2f-982d-0ffee061c835.jpeg",
+                    author: "Equipe do Portal",
+                    date: "2025-07-28",
+                    content: `<p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p><p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>`
+                },
+
+                 {
+                    id: "consentimento-premio-danilo-doneda",
+                    type: "noticia",
+                    title: "Consentimento como base legal é tema do trabalho vencedor",
+                    fullTitle: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes",
+                    category: "Premiações",
+                    image: "https://www.gov.br/anpd/pt-br/assuntos/noticias/consentimento-como-base-legal-e-tema-do-trabalho-vencedor/carrossel-resultado-preliminar-concurso-3-premio-danilo-doneda-2025.jpg/@@images/64969c42-0320-4e2f-982d-0ffee061c835.jpeg",
+                    author: "Equipe do Portal",
+                    date: "2025-07-28",
+                    content: `<p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p><p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>`
+                },
+ {
+                    id: "consentimento-premio-danilo-doneda",
+                    type: "noticia",
+                    title: "Consentimento como base legal é tema do trabalho vencedor",
+                    fullTitle: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes",
+                    category: "Premiações",
+                    image: "https://www.gov.br/anpd/pt-br/assuntos/noticias/consentimento-como-base-legal-e-tema-do-trabalho-vencedor/carrossel-resultado-preliminar-concurso-3-premio-danilo-doneda-2025.jpg/@@images/64969c42-0320-4e2f-982d-0ffee061c835.jpeg",
+                    author: "Equipe do Portal",
+                    date: "2025-07-28",
+                    content: `<p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p><p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>`
+                },
+                 {
+                    id: "consentimento-premio-danilo-doneda",
+                    type: "noticia",
+                    title: "Consentimento como base legal é tema do trabalho vencedor",
+                    fullTitle: "Vazamento em gigante do varejo expõe dados de 2 milhões de clientes",
+                    category: "Premiações",
+                    image: "https://www.gov.br/anpd/pt-br/assuntos/noticias/consentimento-como-base-legal-e-tema-do-trabalho-vencedor/carrossel-resultado-preliminar-concurso-3-premio-danilo-doneda-2025.jpg/@@images/64969c42-0320-4e2f-982d-0ffee061c835.jpeg",
+                    author: "Equipe do Portal",
+                    date: "2025-07-28",
+                    content: `<p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p><p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>`
+                },
 
 
-                "vazamento-varejo": `
-                    <p>Uma das maiores redes de varejo do país confirmou um incidente de segurança que resultou na exposição de dados de aproximadamente 2 milhões de clientes. As informações vazadas incluem nomes completos, CPFs e históricos de compra.</p>
-                    <p>A empresa afirmou em comunicado que já notificou a ANPD e está a tomar todas as medidas necessárias para mitigar os danos e reforçar a sua segurança. Especialistas alertam os clientes para que fiquem atentos a possíveis tentativas de phishing e fraude utilizando os dados expostos.</p>
-                `,
-                "ia-privacidade": `
-                    <p>O avanço da Inteligência Artificial generativa levanta novas e complexas questões sobre privacidade. Modelos de linguagem são treinados com vastos conjuntos de dados da internet, muitas vezes incluindo informações pessoais.</p>
-                    <p>Este artigo explora os principais riscos, como a possibilidade de "desanonimização" de dados e a criação de perfis detalhados sem consentimento. Por outro lado, discute também como a IA pode ser uma ferramenta poderosa para aprimorar a segurança e a gestão da privacidade, automatizando tarefas de conformidade.</p>
-                `,
-                "gdpr-7-anos": `
-                    <p>O Regulamento Geral sobre a Proteção de Dados (GDPR) da União Europeia completou sete anos, consolidando-se como a legislação de privacidade mais influente do mundo. Desde a sua implementação, multas bilionárias foram aplicadas a gigantes da tecnologia, forçando uma mudança global na forma como as empresas lidam com dados pessoais.</p>
-                    <p>Para o Brasil, as lições são muitas. Analistas apontam que a fiscalização mais rigorosa e a educação contínua da população sobre os seus direitos são caminhos que a ANPD pode seguir, inspirando-se no modelo europeu para fortalecer a LGPD.</p>
-                `,
-                "phishing-ataques": `
-                    <p>Relatórios recentes de empresas de cibersegurança indicam um aumento de 40% nos ataques de phishing no último trimestre. Os criminosos estão a utilizar técnicas cada vez mais sofisticadas, incluindo o uso de IA para criar e-mails e mensagens de texto altamente convincentes.</p>
-                    <p>Para se proteger, especialistas recomendam cinco dicas essenciais: 1) Desconfie de mensagens urgentes ou alarmistas. 2) Verifique sempre o remetente do e-mail. 3) Não clique em links suspeitos. 4) Utilize autenticação de dois fatores. 5) Mantenha os seus softwares sempre atualizados.</p>
-                `,
-                "futuro-pos-cookies": `
-                    <p>Com o fim iminente dos cookies de terceiros nos principais navegadores, o mercado de publicidade digital enfrenta a sua maior transformação em décadas. Este artigo de opinião do Dr. Ricardo Alves explora as alternativas que estão a surgir, como as Privacy Sandboxes e os IDs universais.</p>
-                    <p>O autor argumenta que, embora desafiadora, esta mudança representa uma oportunidade única para construir um ecossistema de marketing mais transparente e que respeite genuinamente a privacidade do utilizador, movendo o foco do rastreamento individual para a análise de dados agregados e contextuais.</p>
-                `,
-                "lgpd-saude": `
-                    <p>O setor da saúde lida com alguns dos dados mais sensíveis que existem, tornando a conformidade com a LGPD uma tarefa de altíssima complexidade e responsabilidade. A advogada Maria Clara detalha os principais desafios, desde a garantia do consentimento informado de pacientes até a segurança de prontuários eletrónicos e a partilha de dados entre hospitais e laboratórios.</p>
-                    <p>Ela enfatiza a importância de uma cultura de privacidade robusta dentro das instituições de saúde, que vá além da simples conformidade legal e coloque a proteção dos dados do paciente como pilar central do atendimento.</p>
-                `,
-                "guia-startups": `
-                    <p>Para uma startup, navegar pelas exigências da LGPD pode parecer uma tarefa assustadora. Este guia prático foi criado para simplificar o processo. Abordamos os cinco passos fundamentais que toda startup deve seguir: 1) Mapeamento de dados. 2) Definição das bases legais. 3) Elaboração da política de privacidade. 4) Criação de um canal para atender os titulares. 5) Nomeação de um Encarregado de Dados (DPO).</p>
-                `,
-                "politica-cookies": `
-                    <p>Uma política de cookies não é apenas um requisito legal; é uma ferramenta de transparência. Este guia ensina como criar uma política eficaz, explicando em linguagem simples quais tipos de cookies o seu site utiliza (necessários, de desempenho, de funcionalidade, de publicidade), para que servem e como o utilizador pode geri-los. Incluímos um modelo básico para o ajudar a começar.</p>
-                `,
-                "direitos-titular": `
-                    <p>A LGPD empodera os cidadãos com uma série de direitos sobre os seus dados. Este recurso explica cada um deles: confirmação da existência do tratamento, acesso aos dados, correção, anonimização, portabilidade, eliminação, informação sobre partilha, informação sobre a possibilidade de não fornecer consentimento e revogação do consentimento. Saiba como a sua empresa pode criar um processo eficiente para responder a estas solicitações dentro do prazo legal.</p>
-                `
-            };
 
+                {
+                    id: "ia-privacidade",
+                    type: "noticia",
+                    title: "O impacto da Inteligência Artificial na privacidade: riscos e oportunidades.",
+                    fullTitle: "O impacto da Inteligência Artificial na privacidade: riscos e oportunidades",
+                    category: "Privacidade e Tecnologia",
+                    image: "https://placehold.co/400x250/166534/FFFFFF?text=IA+e+Privacidade",
+                    author: "Carlos Mendes",
+                    date: "2025-07-27",
+                    content: `<p>O avanço da Inteligência Artificial generativa levanta novas e complexas questões sobre privacidade. Modelos de linguagem são treinados com vastos conjuntos de dados da internet, muitas vezes incluindo informações pessoais.</p><p>Este artigo explora os principais riscos, como a possibilidade de "desanonimização" de dados e a criação de perfis detalhados sem consentimento. Por outro lado, discute também como a IA pode ser uma ferramenta poderosa para aprimorar a segurança e a gestão da privacidade, automatizando tarefas de conformidade.</p>`
+                },
+                {
+                    id: "futuro-pos-cookies",
+                    type: "artigo",
+                    title: "O Futuro da Privacidade na Era Pós-Cookies",
+                    fullTitle: "O Futuro da Privacidade na Era Pós-Cookies",
+                    category: "Artigo de Opinião",
+                    image: "https://placehold.co/400x250/0e7490/FFFFFF?text=Cookies",
+                    author: "Dr. Ricardo Alves",
+                    date: "2025-07-22",
+                    content: `<p>Com o fim iminente dos cookies de terceiros nos principais navegadores, o mercado de publicidade digital enfrenta a sua maior transformação em décadas. Este artigo de opinião do Dr. Ricardo Alves explora as alternativas que estão a surgir, como as Privacy Sandboxes e os IDs universais.</p><p>O autor argumenta que, embora desafiadora, esta mudança representa uma oportunidade única para construir um ecossistema de marketing mais transparente e que respeite genuinamente a privacidade do utilizador, movendo o foco do rastreamento individual para a análise de dados agregados e contextuais.</p>`
+                },
+                {
+                    id: "lgpd-saude",
+                    type: "artigo",
+                    title: "LGPD e o Setor da Saúde: Desafios e Cuidados",
+                    fullTitle: "LGPD e o Setor da Saúde: Desafios e Cuidados",
+                    category: "Artigo de Opinião",
+                    image: "https://placehold.co/400x250/be123c/FFFFFF?text=Saúde",
+                    author: "Maria Clara",
+                    date: "2025-07-21",
+                    content: `<p>O setor da saúde lida com alguns dos dados mais sensíveis que existem, tornando a conformidade com a LGPD uma tarefa de altíssima complexidade e responsabilidade. A advogada Maria Clara detalha os principais desafios, desde a garantia do consentimento informado de pacientes até a segurança de prontuários eletrónicos e a partilha de dados entre hospitais e laboratórios.</p><p>Ela enfatiza a importância de uma cultura de privacidade robusta dentro das instituições de saúde, que vá além da simples conformidade legal e coloque a proteção dos dados do paciente como pilar central do atendimento.</p>`
+                },
+                {
+                    id: "guia-startups",
+                    type: "guia",
+                    title: "Guia para Startups",
+                    fullTitle: "Guia para Startups: Primeiros Passos na LGPD",
+                    category: "Descomplica LGPD",
+                    image: "https://placehold.co/600x400/fbbf24/FFFFFF?text=Startups",
+                    author: "Equipe do Portal",
+                    date: "2025-07-20",
+                    icon: "file-text",
+                    description: "Os primeiros passos para adequar a sua startup à LGPD.",
+                    content: `<p>Para uma startup, navegar pelas exigências da LGPD pode parecer uma tarefa assustadora. Este guia prático foi criado para simplificar o processo. Abordamos os cinco passos fundamentais que toda startup deve seguir: 1) Mapeamento de dados. 2) Definição das bases legais. 3) Elaboração da política de privacidade. 4) Criação de um canal para atender os titulares. 5) Nomeação de um Encarregado de Dados (DPO).</p>`
+                },
+                {
+                    id: "politica-cookies",
+                    type: "guia",
+                    title: "Política de Cookies",
+                    fullTitle: "Como Criar uma Política de Cookies Eficiente",
+                    category: "Descomplica LGPD",
+                    image: "https://placehold.co/600x400/38bdf8/FFFFFF?text=Cookies",
+                    author: "Equipe do Portal",
+                    date: "2025-07-19",
+                    icon: "cookie",
+                    description: "Como criar e gerir uma política de cookies eficiente.",
+                    content: `<p>Uma política de cookies não é apenas um requisito legal; é uma ferramenta de transparência. Este guia ensina como criar uma política eficaz, explicando em linguagem simples quais tipos de cookies o seu site utiliza (necessários, de desempenho, de funcionalidade, de publicidade), para que servem e como o utilizador pode geri-los. Incluímos um modelo básico para o ajudar a começar.</p>`
+                },
+                {
+                    id: "direitos-titular",
+                    type: "guia",
+                    title: "Direitos do Titular",
+                    fullTitle: "Direitos do Titular: Como Atender às Solicitações",
+                    category: "Descomplica LGPD",
+                    image: "https://placehold.co/600x400/a78bfa/FFFFFF?text=Direitos",
+                    author: "Equipe do Portal",
+                    date: "2025-07-18",
+                    icon: "shield-question",
+                    description: "Entenda quais são e como atender às solicitações dos seus clientes.",
+                    content: `<p>A LGPD empodera os cidadãos com uma série de direitos sobre os seus dados. Este recurso explica cada um deles: confirmação da existência do tratamento, acesso aos dados, correção, anonimização, portabilidade, eliminação, informação sobre partilha, informação sobre a possibilidade de não fornecer consentimento e revogação do consentimento. Saiba como a sua empresa pode criar um processo eficiente para responder a estas solicitações dentro do prazo legal.</p>`
+                }
+            ];
+
+            // --- CARREGAMENTO DE CONTEÚDO ---
+            function loadContent() {
+                loadNews();
+                loadArticles();
+                loadGuides();
+                addArticleListeners();
+            }
+
+            function loadNews() {
+                const sortedNews = contentDatabase.filter(item => item.type === 'noticia').sort((a, b) => new Date(b.date) - new Date(a.date));
+                const mainContainer = document.getElementById('noticia-principal-container');
+                const secondaryContainer = document.getElementById('noticias-secundarias-container');
+                const allNewsContainer = document.getElementById('todas-noticias-container');
+
+                if (mainContainer) mainContainer.innerHTML = '';
+                if (secondaryContainer) secondaryContainer.innerHTML = '';
+                if (allNewsContainer) allNewsContainer.innerHTML = '';
+
+                const mainNews = sortedNews[0];
+                if (mainNews && mainContainer) {
+                    mainContainer.innerHTML = `<div class="col-span-1 lg:col-span-1 group cursor-pointer card-hover-effect bg-white rounded-xl overflow-hidden open-article" data-id="${mainNews.id}"><div class="relative"><div class="overflow-hidden"><img src="${mainNews.image}" alt="${mainNews.title}" class="w-full h-auto object-cover img-hover-effect"></div><div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-0 left-0 p-6 md:p-8"><span class="bg-brand-blue-dark text-white text-xs font-bold px-3 py-1 rounded-full">${mainNews.category}</span><h2 class="text-white text-2xl md:text-3xl font-bold mt-3 leading-tight group-hover:underline">${mainNews.title}</h2></div></div></div>`;
+                }
+
+                const secondaryNews = sortedNews.slice(1, 5);
+                if (secondaryContainer) {
+                    secondaryNews.forEach(news => {
+                        secondaryContainer.innerHTML += `<div class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="${news.id}"><div class="overflow-hidden rounded-lg mb-4"><img src="${news.image}" alt="${news.title}" class="w-full h-40 object-cover img-hover-effect"></div><span class="text-brand-blue-dark text-sm font-semibold">${news.category}</span><h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">${news.title}</h3></div>`;
+                    });
+                }
+                
+                if (allNewsContainer) {
+                    sortedNews.forEach(news => {
+                        const formattedDate = new Date(news.date + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
+                        allNewsContainer.innerHTML += `<article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="${news.id}"><div class="overflow-hidden rounded-lg mb-4"><img src="${news.image}" alt="${news.title}" class="w-full h-48 object-cover img-hover-effect"></div><span class="text-brand-blue-dark text-sm font-semibold">${news.category}</span><h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">${news.title}</h3><p class="text-xs text-gray-500 mt-2">${formattedDate}</p></article>`;
+                    });
+                }
+            }
+
+            function loadArticles() {
+                const articlesContainer = document.getElementById('todos-artigos-container');
+                if (!articlesContainer) return;
+                articlesContainer.innerHTML = '';
+                const sortedArticles = contentDatabase.filter(item => item.type === 'artigo').sort((a, b) => new Date(b.date) - new Date(a.date));
+                sortedArticles.forEach(article => {
+                    articlesContainer.innerHTML += `<article class="group cursor-pointer card-hover-effect bg-white p-4 rounded-xl open-article" data-id="${article.id}"><div class="overflow-hidden rounded-lg mb-4"><img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover img-hover-effect"></div><span class="text-brand-blue-dark text-sm font-semibold">${article.category}</span><h3 class="font-bold text-lg mt-1 group-hover:text-brand-blue-dark transition-all-300">${article.title}</h3><p class="text-xs text-gray-500 mt-2">Por ${article.author}</p></article>`;
+                });
+            }
+
+            function loadGuides() {
+                const guidesContainer = document.getElementById('guias-container');
+                if (!guidesContainer) return;
+                guidesContainer.innerHTML = '';
+                const sortedGuides = contentDatabase.filter(item => item.type === 'guia').sort((a, b) => new Date(b.date) - new Date(a.date));
+                sortedGuides.forEach(guia => {
+                     guidesContainer.innerHTML += `<div class="card-hover-effect bg-white p-6 rounded-xl text-center cursor-pointer open-article" data-id="${guia.id}"><i data-lucide="${guia.icon}" class="w-12 h-12 mx-auto text-brand-blue-dark"></i><h3 class="font-bold text-lg mt-4">${guia.title}</h3><p class="text-sm mt-2 text-gray-600">${guia.description}</p></div>`;
+                });
+            }
+            
             // --- LÓGICA DE NAVEGAÇÃO E MODAL ---
             const showPage = (pageId) => {
                 document.querySelectorAll('.page-content').forEach(page => page.classList.add('hidden'));
                 const targetPage = document.getElementById(`page-${pageId}`);
-                if (targetPage) {
-                    targetPage.classList.remove('hidden');
-                } else {
-                    document.getElementById('page-home').classList.remove('hidden');
-                }
+                (targetPage || document.getElementById('page-home')).classList.remove('hidden');
                 window.scrollTo(0, 0);
                 lucide.createIcons();
             };
 
-            const openArticle = (element) => {
-                const { id, title, category, img, author, date } = element.dataset;
-                const content = articleContents[id] || "<p>O conteúdo para este artigo estará disponível em breve.</p>";
-
-                const articleHTML = `
-                    <div class="relative">
-                        <img src="${img.replace(/(\d+)x(\d+)/, '1200x600')}" alt="${title}" class="w-full h-64 object-cover rounded-t-xl">
-                        <button id="close-modal-button" class="absolute top-4 right-4 bg-white/70 p-2 rounded-full text-gray-800 hover:bg-white transition-all-300"><i data-lucide="x" class="w-6 h-6"></i></button>
-                    </div>
-                    <div class="p-8 md:p-10">
-                        <span class="text-brand-blue-dark font-semibold text-sm">${category}</span>
-                        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4 leading-tight">${title}</h1>
-                        <div class="flex items-center space-x-4 text-sm mb-6 border-b pb-4">
-                            <div><p class="font-semibold text-gray-800">Por ${author}</p><p class="text-gray-500">Publicado em ${date}</p></div>
-                        </div>
-                        <article class="prose prose-lg max-w-none text-gray-700">
-                            ${content}
-                        </article>
-                    </div>`;
-                articleModalContent.innerHTML = articleHTML;
+            const openArticleModal = (element) => {
+                const contentId = element.dataset.id;
+                const contentData = contentDatabase.find(item => item.id === contentId);
+                if (!contentData) return;
+                
+                const formattedDate = new Date(contentData.date + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
+                articleModalContent.innerHTML = `<div class="relative"><img src="${contentData.image.replace(/(\d+)x(\d+)/, '1200x600')}" alt="${contentData.fullTitle}" class="w-full h-64 object-cover rounded-t-xl"><button id="close-modal-button" class="absolute top-4 right-4 bg-white/70 p-2 rounded-full text-gray-800 hover:bg-white transition-all-300"><i data-lucide="x" class="w-6 h-6"></i></button></div><div class="p-8 md:p-10"><span class="text-brand-blue-dark font-semibold text-sm">${contentData.category}</span><h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4 leading-tight">${contentData.fullTitle}</h1><div class="flex items-center space-x-4 text-sm mb-6 border-b pb-4"><div><p class="font-semibold text-gray-800">Por ${contentData.author}</p><p class="text-gray-500">Publicado em ${formattedDate}</p></div></div><article class="prose prose-lg max-w-none text-gray-700">${contentData.content}</article></div>`;
                 lucide.createIcons();
                 articleModal.classList.remove('hidden');
                 setTimeout(() => { articleModal.classList.remove('opacity-0'); articleModalContent.classList.remove('scale-95'); }, 10);
-                document.getElementById('close-modal-button').addEventListener('click', closeArticle);
+                document.getElementById('close-modal-button').addEventListener('click', closeArticleModal);
             };
 
-            const closeArticle = () => {
+            const closeArticleModal = () => {
                 articleModal.classList.add('opacity-0');
                 articleModalContent.classList.add('scale-95');
                 setTimeout(() => { articleModal.classList.add('hidden'); articleModalContent.innerHTML = ''; }, 300);
             };
 
-            document.querySelectorAll('.open-article').forEach(element => element.addEventListener('click', () => openArticle(element)));
-            
+            const addArticleListeners = () => document.querySelectorAll('.open-article').forEach(element => element.addEventListener('click', () => openArticleModal(element)));
+
             const handleNavigation = () => {
                 mobileMenu.classList.add('hidden');
                 showPage(window.location.hash.substring(1) || 'home');
             }
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.location.hash = e.currentTarget.dataset.page;
+            // --- LÓGICA DO ACCORDION (GLOSSÁRIO) ---
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    const icon = button.querySelector('svg');
+                    const isExpanded = panel.style.maxHeight && panel.style.maxHeight !== '0px';
+                    
+                    document.querySelectorAll('.accordion-button').forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.nextElementSibling.style.maxHeight = null;
+                            const otherIcon = otherButton.querySelector('svg');
+                            if(otherIcon) {
+                                otherIcon.classList.remove('rotate-180');
+                            }
+                        }
+                    });
+
+                    if (isExpanded) {
+                        panel.style.maxHeight = null;
+                        if (icon) {
+                            icon.classList.remove('rotate-180');
+                        }
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        if (icon) {
+                            icon.classList.add('rotate-180');
+                        }
+                    }
                 });
             });
 
+            // --- EVENT LISTENERS GERAIS ---
+            document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); window.location.hash = e.currentTarget.dataset.page; }));
             document.getElementById('mobile-menu-button').addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            
-            articleModal.addEventListener('click', (e) => {
-                if (e.target === articleModal) {
-                    closeArticle();
-                }
-            });
-
             window.addEventListener('hashchange', handleNavigation);
+            articleModal.addEventListener('click', (e) => { if (e.target === articleModal) closeArticleModal(); });
             
-            // Carregamento inicial
+            // --- INICIALIZAÇÃO ---
+            loadContent();
             handleNavigation();
-            lucide.createIcons();
         });
     </script>
 
